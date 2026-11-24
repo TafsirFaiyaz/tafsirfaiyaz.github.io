@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Tafsir Ahmed Faiyaz — Backend developer (Python / Django). Projects, skills and a tiny typing game." />
+  <meta name="theme-color" content="#070b18" />
+  <title>Tafsir Ahmed Faiyaz · Backend Developer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>&#128187;</text></svg>" />
+</head>
+<body>
+  <!-- Animated background -->
+  <div class="bg-layer" aria-hidden="true">
+    <div class="bg-grid"></div>
+    <div class="orb orb-blue"></div>
+    <div class="orb orb-crimson"></div>
+    <div class="scanline"></div>
+  </div>
+
+  <!-- Navigation -->
+  <header class="nav" id="nav">
+    <a class="nav-logo" href="#home" aria-label="Home">
+      <span class="logo-mark">&lt;/&gt;</span>
+      <span>tafsir<span class="accent">.</span>dev</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+      <a href="#about">about</a>
+      <a href="#skills">skills</a>
+      <a href="#projects">projects</a>
+      <a href="#game">play</a>
+      <a href="#contact">contact</a>
+      <a class="nav-cta" href="mailto:tafsirfaiyaz@gmail.com">hire me <span>↗</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="badge"><span class="pulse-dot"></span> open to backend roles · dhaka, bd</div>
+          <h1 class="hero-title">
+            Hi, I'm <span class="glitch" data-text="Tafsir">Tafsir</span><span class="accent">.</span>
+          </h1>
+          <h2 class="hero-subtitle">
+            I build <span class="typed-wrap"><span id="typed"></span><span class="caret"></span></span>
+          </h2>
+          <p class="hero-desc">
+            Final-year CSE graduate turning requirements into clean, tested REST APIs.
+            Python, Django &amp; Django REST Framework by day — curious about databases,
+            security and everything that happens behind the <code>↗</code> button.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">view projects <span>→</span></a>
+            <a class="btn btn-ghost" href="#game">try the game <span>⌨</span></a>
+          </div>
+          <div class="hero-socials">
+            <a href="https://github.com/TafsirFaiyaz" target="_blank" rel="noopener" aria-label="GitHub">github</a>
+            <a href="https://leetcode.com/u/tafsirfaiyaz" target="_blank" rel="noopener" aria-label="LeetCode">leetcode</a>
+            <a href="mailto:tafsirfaiyaz@gmail.com" aria-label="Email">email</a>
+          </div>
+        </div>
+
+        <!-- Terminal card -->
+        <div class="hero-visual" aria-label="Code preview">
+          <div class="terminal">
+            <div class="terminal-top">
+              <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+              <span class="terminal-title">pulsehr / services.py</span>
+            </div>
+            <div class="terminal-body"><pre><code><span class="c-key">def</span> <span class="c-fn">calculate_payroll</span>(employee, month):
+    <span class="c-key">items</span> = [(<span class="c-str">"Basic Salary"</span>, employee.base_salary)]
+
+    <span class="c-key">for</span> component <span class="c-key">in</span> SalaryComponent.objects.all():
+        amount = base * component.amount / <span class="c-num">100</span>
+        items.append((component.name, amount))
+
+    <span class="c-key">return</span> items  <span class="c-comment"># clean · tested · shipped</span></code></pre></div>
+            <div class="terminal-status">
+              <span class="status-ok">● 10 tests passed</span>
+              <span class="status-dim">python 3.12 · django 5.1</span>
+            </div>
+          </div>
+          <div class="float-chip chip-blue">REST APIs</div>
+          <div class="float-chip chip-crimson">PostgreSQL</div>
+        </div>
+      </div>
+
+      <div class="container stats" id="stats">
+        <div class="stat"><strong data-count="3.82" data-decimals="2">3.82</strong><span>CGPA / 4.00</span></div>
+        <div class="stat"><strong data-count="5" data-suffix="+">5+</strong><span>Projects shipped</span></div>
+        <div class="stat"><strong data-count="10">10</strong><span>Unit tests passing</span></div>
+        <div class="stat"><strong data-count="2026">2026</strong><span>BSc in CSE</span></div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">01 / about</span>
+          <h2>Just a developer who <span class="accent">finishes things.</span></h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-card reveal">
+            <p>
+              I'm Tafsir, a Computer Science graduate from BRAC University. I like the part of
+              software nobody sees: the schema that makes queries fast, the permission layer that
+              keeps data safe, the test that catches a bug before a user does.
+            </p>
+            <p>
+              My strongest stack is <strong>Python → Django → DRF → PostgreSQL</strong>, wrapped in
+              Docker and documented with Swagger. I also teach programming one-to-one, which taught
+              me to explain hard things simply — a habit I bring to code reviews and API contracts.
+            </p>
+            <div class="about-tags">
+              <span>backend-first</span><span>clean code</span><span>curious</span><span>team player</span>
+            </div>
+          </div>
+          <div class="about-side reveal">
+            <div class="mini-card">
+              <span class="mini-label">currently</span>
+              <strong>Building enterprise APIs</strong>
+              <p>HRM, payroll, auth &amp; role-based access.</p>
+            </div>
+            <div class="mini-card">
+              <span class="mini-label">learning</span>
+              <strong>System design &amp; scaling</strong>
+              <p>Query plans, caching, deployment pipelines.</p>
+            </div>
+            <div class="mini-card">
+              <span class="mini-label">outside code</span>
+              <strong>Teaching &amp; mentoring</strong>
+              <p>Mentor Bangla · since Feb 2026.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">02 / toolkit</span>
+          <h2>Things I work <span class="accent">with.</span></h2>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-col reveal">
+            <h3><span class="num">01</span> Backend &amp; APIs</h3>
+            <div class="skill" data-level="92"><div class="skill-top"><span>Python / Django / DRF</span><em>92%</em></div><div class="bar"><i></i></div></div>
+            <div class="skill" data-level="85"><div class="skill-top"><span>REST API design</span><em>85%</em></div><div class="bar"><i></i></div></div>
+            <div class="skill" data-level="80"><div class="skill-top"><span>Node.js / Express</span><em>80%</em></div><div class="bar"><i></i></div></div>
+            <div class="skill" data-level="78"><div class="skill-top"><span>OOP &amp; clean architecture</span><em>78%</em></div><div class="bar"><i></i></div></div>
+          </div>
+          <div class="skill-col reveal">
+            <h3><span class="num">02</span> Data &amp; infra</h3>
+            <div class="skill" data-level="88"><div class="skill-top"><span>PostgreSQL / MySQL</span><em>88%</em></div><div class="bar"><i></i></div></div>
+            <div class="skill" data-level="84"><div class="skill-top"><span>Schema, migrations, indexing</span><em>84%</em></div><div class="bar"><i></i></div></div>
+            <div class="skill" data-level="82"><div class="skill-top"><span>Docker / Linux</span><em>82%</em></div><div class="bar"><i></i></div></div>
+            <div class="skill" data-level="86"><div class="skill-top"><span>Git &amp; GitHub workflow</span><em>86%</em></div><div class="bar"><i></i></div></div>
+          </div>
+          <div class="skill-col reveal">
+            <h3><span class="num">03</span> Quality &amp; security</h3>
+            <div class="skill" data-level="80"><div class="skill-top"><span>pytest / unit testing</span><em>80%</em></div><div class="bar"><i></i></div></div>
+            <div class="skill" data-level="83"><div class="skill-top"><span>JWT / RBAC / bcrypt</span><em>83%</em></div><div class="bar"><i></i></div></div>
+            <div class="skill" data-level="75"><div class="skill-top"><span>PEP 8 &amp; documentation</span><em>75%</em></div><div class="bar"><i></i></div></div>
+            <div class="skill" data-level="70"><div class="skill-top"><span>PyTorch / federated learning</span><em>70%</em></div><div class="bar"><i></i></div></div>
+          </div>
+        </div>
+        <div class="chip-cloud reveal">
+          <span>Swagger</span><span>MongoDB</span><span>Vercel</span><span>PKI</span><span>C</span><span>Java</span><span>PHP</span><span>Threat modelling</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">03 / work</span>
+          <h2>Selected <span class="accent">projects.</span></h2>
+          <p class="section-intro">Real code, real trade-offs. Each one taught me something the next project used.</p>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card featured reveal">
+            <div class="project-top">
+              <span class="project-tag hot">featured</span>
+              <span class="project-year">2026</span>
+            </div>
+            <h3>PulseHR <span>· HRM &amp; Payroll REST API</span></h3>
+            <p>An enterprise HRM backend: employees, departments, leave approvals, attendance and a payroll engine with percentage components and unpaid-leave deductions.</p>
+            <ul>
+              <li>JWT auth with admin / manager / employee roles</li>
+              <li>Indexed PostgreSQL schema + optimized querysets</li>
+              <li>10 passing tests · Swagger docs · Docker Compose</li>
+            </ul>
+            <div class="stack"><i>Django</i><i>DRF</i><i>PostgreSQL</i><i>Docker</i><i>pytest</i></div>
+            <div class="project-links">
+              <a href="https://github.com/TafsirFaiyaz/PulseHR" target="_blank" rel="noopener">source ↗</a>
+              <a href="https://github.com/TafsirFaiyaz/PulseHR#api-reference" target="_blank" rel="noopener">docs ↗</a>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-top"><span class="project-tag">in progress</span><span class="project-year">2026</span></div>
+            <h3>Smart Bank Management System</h3>
+            <p>Banking backend with account management, fund transfers and transaction history exposed over REST. Focused on secure, atomic money movement.</p>
+            <div class="stack"><i>Python</i><i>Django</i><i>DRF</i><i>PostgreSQL</i></div>
+            <div class="project-links"><a href="https://github.com/TafsirFaiyaz" target="_blank" rel="noopener">github ↗</a></div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-top"><span class="project-tag live">live</span><span class="project-year">2025</span></div>
+            <h3>Homify · Rental Platform</h3>
+            <p>Full rental-management app: listings, tenant requests, instalment payments and maintenance tickets. Debugged real deployment and session issues.</p>
+            <div class="stack"><i>Node.js</i><i>Express</i><i>MongoDB</i><i>Vercel</i></div>
+            <div class="project-links"><a href="https://github.com/TafsirFaiyaz/Homify" target="_blank" rel="noopener">source ↗</a></div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-top"><span class="project-tag">security</span><span class="project-year">2026</span></div>
+            <h3>Job Portal Security Enhancement</h3>
+            <p>Hardened a multi-role app: hashed passwords, prepared statements, email-based 2FA, and fixes for session fixation and unsafe file uploads.</p>
+            <div class="stack"><i>PHP</i><i>MySQL</i><i>2FA</i></div>
+            <div class="project-links"><a href="https://github.com/TafsirFaiyaz" target="_blank" rel="noopener">github ↗</a></div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-top"><span class="project-tag">research</span><span class="project-year">2025–26</span></div>
+            <h3>Trusted Federated Learning</h3>
+            <p>A trust-aware framework using TPM 2.0 attestation, reputation scoring and blockchain governance to keep malicious clients out of training.</p>
+            <div class="stack"><i>Python</i><i>PyTorch</i><i>PKI</i></div>
+            <div class="project-links"><a href="https://github.com/TafsirFaiyaz" target="_blank" rel="noopener">github ↗</a></div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-top"><span class="project-tag">2024</span><span class="project-year">2024</span></div>
+            <h3>GameVault · Social Ratings</h3>
+            <p>Game rating platform on a normalized 12-table schema with backlogs, favourites, two-way friend requests, leaderboard and admin moderation.</p>
+            <div class="stack"><i>PHP</i><i>MySQL</i></div>
+            <div class="project-links"><a href="https://github.com/TafsirFaiyaz" target="_blank" rel="noopener">github ↗</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- GAME -->
+    <section class="section game-section" id="game">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">04 / break time</span>
+          <h2>Code <span class="accent">Rush.</span> <span class="head-note">a tiny typing game</span></h2>
+          <p class="section-intro">30 seconds. Real code lines. Type fast, stay accurate. Your best score is saved in this browser.</p>
+        </div>
+
+        <div class="game-shell reveal">
+          <div class="game-bar">
+            <div class="game-stat"><span>time</span><strong id="gTime">30.0s</strong></div>
+            <div class="game-stat"><span>wpm</span><strong id="gWpm">0</strong></div>
+            <div class="game-stat"><span>accuracy</span><strong id="gAcc">100%</strong></div>
+            <div class="game-stat"><span>best</span><strong id="gBest">—</strong></div>
+          </div>
+
+          <div class="game-screen">
+            <div class="game-idle" id="gameIdle">
+              <div class="game-icon">&gt;_</div>
+              <h3>Ready to type?</h3>
+              <p>Press start, then type the highlighted code exactly as shown.</p>
+              <div class="difficulty" role="group" aria-label="Difficulty">
+                <button class="diff active" data-diff="easy">easy</button>
+                <button class="diff" data-diff="medium">medium</button>
+                <button class="diff" data-diff="hard">hard</button>
+              </div>
+              <button class="btn btn-primary" id="gStart">start game <span>→</span></button>
+            </div>
+
+            <div class="game-play hidden" id="gamePlay">
+              <div class="code-window">
+                <div class="code-window-top"><span class="dot crimson"></span><span>snippet.py</span></div>
+                <div class="code-text" id="gText" aria-label="Code to type"></div>
+              </div>
+              <p class="game-hint">Just start typing — no need to click the box.</p>
+            </div>
+
+            <div class="game-result hidden" id="gameResult">
+              <div class="result-badge" id="gBadge">NICE</div>
+              <h3 id="gResultTitle">Run complete</h3>
+              <div class="result-grid">
+                <div><span>WPM</span><strong id="gRWpm">0</strong></div>
+                <div><span>Accuracy</span><strong id="gRAcc">0%</strong></div>
+                <div><span>CHARS</span><strong id="gRChars">0</strong></div>
+              </div>
+              <button class="btn btn-primary" id="gAgain">play again <span>↻</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="container contact-grid">
+        <div class="reveal">
+          <span class="kicker">05 / contact</span>
+          <h2>Let's build <span class="accent">something.</span></h2>
+          <p class="contact-desc">Looking for an associate backend role in Python / Django, or just want to talk APIs? My inbox is open.</p>
+        </div>
+        <div class="contact-card reveal">
+          <a class="contact-row" href="mailto:tafsirfaiyaz@gmail.com">
+            <span class="contact-icon">✉</span><span><small>email</small>tafsirfaiyaz@gmail.com</span><span class="arrow">↗</span>
+          </a>
+          <a class="contact-row" href="https://github.com/TafsirFaiyaz" target="_blank" rel="noopener">
+            <span class="contact-icon">⌘</span><span><small>github</small>github.com/TafsirFaiyaz</span><span class="arrow">↗</span>
+          </a>
+          <a class="contact-row" href="https://leetcode.com/u/tafsirfaiyaz" target="_blank" rel="noopener">
+            <span class="contact-icon">◆</span><span><small>leetcode</small>leetcode.com/u/tafsirfaiyaz</span><span class="arrow">↗</span>
+          </a>
+          <div class="contact-row static">
+            <span class="contact-icon">⌾</span><span><small>location</small>Dhaka, Bangladesh</span><span class="avail">available</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© <span id="year">2026</span> Tafsir Ahmed Faiyaz. Built with HTML, CSS &amp; too much coffee.</span>
+      <span class="footer-right">designed in <span class="accent">crimson &amp; blue</span> · <a href="#home">back to top ↑</a></span>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
